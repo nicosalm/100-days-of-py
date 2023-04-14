@@ -1,4 +1,13 @@
-# String splicing and formatting
+''' Day 2 Tipper'''
+
+# – Mathematical operators
+# int, float, and complex data types can be used with the following operators: +, -, *, /, //, %, **
+num = 2
+# complex operations 
+num = num ** (2 + 1) * 2 - 15 / 3 + 1 # 12.0
+mod = 15 % 2 # 1
+
+# – String splicing and formatting1
 
 # We can splice strings using square brackets
 string = "Hello World!"
@@ -26,7 +35,7 @@ string = string.upper() # "HELLO WORLD!"
 string = "hello world!"
 string = string.title() # "Hello World!"
 
-# Now, let's use what we've learned to create a tip calculator!
+# – Now, let's use what we've learned to create a tip calculator!
 
 
 print("Welcome to the tip calculator.")

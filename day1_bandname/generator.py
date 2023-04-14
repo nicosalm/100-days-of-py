@@ -5,7 +5,7 @@ city = input("What's name of the city you grew up in?\n")
 
 # if the user enters erronious input, the program should ask for the input again
 while all(x.isalpha() or x.isspace() for x in city) == False:
-    city = input("Please enter a valid city name.\n")
+    city = input("Please enter a valid city name:\n")
     
     # what just happened? 
     # - the function all() takes an iterable and returns True if all elements are True
@@ -18,7 +18,7 @@ while all(x.isalpha() or x.isspace() for x in city) == False:
 animal = input("What's your favorite animal?\n")
 
 while all(x.isalpha() or x.isspace() for x in animal) == False:
-    animal = input("Please enter a valid animal name.\n")
+    animal = input("Please enter a valid animal name:\n")
     
 # print the band name to the console!
 print("Your band name could be the " + city + " " + animal + "s!")

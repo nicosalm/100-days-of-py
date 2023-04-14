@@ -1,6 +1,7 @@
 ''' Day 2 Tipper'''
 
 # – Mathematical operators
+
 # int, float, and complex data types can be used with the following operators: +, -, *, /, //, %, **
 num = 2
 # complex operations 

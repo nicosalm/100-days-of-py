@@ -54,6 +54,3 @@ people = int(input("How many people to split the bill? "))
 if people == 1: 
     print(f"Your total bill is ${total_bill}.") # no need to split the bill
 print(f"Each person should pay ${round(total_bill / people, 2)}.")
-
-# we can expand this program to include a split bill feature
-# we can also add a while loop to make sure the user enters a valid input

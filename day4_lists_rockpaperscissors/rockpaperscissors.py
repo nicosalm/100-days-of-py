@@ -20,7 +20,7 @@ while user_strikes < 2 and computer_strikes < 2:
     computer_choice = random.choice(list(choices.keys()))
         
     # determine the outcome
-    outcome = (choices[user_choice] - choices[computer_choice]) % 3
+    outcome = (choices[user_choice] - choices[computer_choice]) % 3 # mod 3 to wrap around and make it easier to determine the outcome
     if outcome == outcomes["win"]:
         print("You win!")
         computer_strikes += 1

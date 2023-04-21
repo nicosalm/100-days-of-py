@@ -1,8 +1,6 @@
-# importing 
 import time
 import random
 from english_words import get_english_words_set # https://pypi.org/project/english-words/
-
 
 name = input("What is your name? ")
 print ("Hello, " + name, "– Time to play hangman!")
@@ -15,7 +13,6 @@ time.sleep(0.5)
 # here we set the secret word.
 web2lowerset = get_english_words_set(['web2'], lower=True)
 word = random.choice(list(web2lowerset))
-
 
 guesses = ''
 turns = 10

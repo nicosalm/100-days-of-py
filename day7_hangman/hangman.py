@@ -1,62 +1,81 @@
-# hangman game
-
+#importing the time module
+import time
 import random
-
-# generate a random word
-
 from english_words import get_english_words_set # https://pypi.org/project/english-words/
+
+#welcoming the user
+name = input("What is your name? ")
+
+print ("Hello, " + name, " – Time to play hangman!")
+
+#wait for 1 second
+time.sleep(1)
+
+print ("Start guessing...")
+time.sleep(0.5)
+
+# here we set the secret. You can select any word to play with. 
 web2lowerset = get_english_words_set(['web2'], lower=True)
+word = random.choice(list(web2lowerset))
 
-the_word = random.choice(list(web2lowerset))
-the_word = "apple"
+#creates an variable with an empty value
+guesses = ''
 
-# dictionary of characters and their status
+#determine the number of turns
+turns = 10
 
-dict = {}
-dict = dict.fromkeys(the_word, False)
-lives = 10
+# Create a while loop
 
-# print the word with blanks
+#check if the turns are more than zero
+while turns > 0:         
 
-print("Welcome to Hangman!")
-print("You have 10 lives to guess the word.")
-print("The word has", len(the_word), "letters.")
-print("Good luck!")
+    # make a counter that starts with zero
+    failed = 0             
 
-print("The word is: ", end="")
-print ("_ " * len(the_word))
-print (" ")
+    # for every character in secret_word    
+    for char in word:      
 
-# main loop
-
-while lives > 0:
-    user = input("Guess a letter: ")
-    if (user in the_word):
-        dict[user] = True
-        print("Correct!")
-        
-        # print the word with blanks, but with correct letters filled in
-        string = ""
-        for key in dict:
-            if dict[key] == True:
-                string += key + " "
-            else:
-                string += "_ "
-        if string == the_word:
-            print("You win!")
-            break
-        print("The word is: ", end="")
-        print(string)
-        print(" ")
-    else:
-        lives -= 1
-        print("Wrong!")
-        if lives == 0:
-            print("You lose!")
-            print("The word was: ", end="")
-            print(the_word)
-            break
-        print("You have", lives, "lives left.")
-        print(" ")
-            
+    # see if the character is in the players guess
+        if char in guesses:    
     
+        # print then out the character
+            print (char,end=""),    
+
+        else:
+    
+        # if not found, print a dash
+            print ("_",end=""),     
+       
+        # and increase the failed counter with one
+            failed += 1    
+
+    # if failed is equal to zero
+
+    # print You Won
+    if failed == 0:        
+        print (" ... You won")
+    # exit the script
+        break            
+    # ask the user go guess a character
+    guess = input(" ... guess a character: ") 
+
+    # set the players guess to guesses
+    guesses += guess                    
+
+    # if the guess is not found in the secret word
+    if guess not in word:  
+ 
+     # turns counter decreases with 1 (now 9)
+        turns -= 1        
+ 
+    # print wrong
+        print ("Wrong")  
+ 
+    # how many turns are left
+        print ("You have", + turns, 'more guesses' )
+ 
+    # if the turns are equal to zero
+        if turns == 0:           
+    
+        # print "You Lose"
+            print ("You Lose"  )

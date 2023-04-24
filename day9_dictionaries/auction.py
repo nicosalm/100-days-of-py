@@ -1,3 +1,6 @@
+"""
+    This program is a blind auction, where bidders enter their name and bid, and the highest bidder wins.
+"""
 import os
 from time import sleep
 from art import logo as auction_logo

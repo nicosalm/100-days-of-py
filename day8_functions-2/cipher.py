@@ -1,5 +1,6 @@
-# code a cipher that takes a string and a key and a mode and returns a string
-
+"""
+    This program encrypts and decrypts a string using a key, shifting each letter by the key.
+"""
 def cipher(mode: str, string: str, key: int) -> str:
     """Encrypts a string using a key"""
     new_str = ""
@@ -22,9 +23,9 @@ def cipher(mode: str, string: str, key: int) -> str:
 
 def main():
     """Main function"""
-    mode = input("Enter a mode (encrypt, decrypt): ")
+    mode = input("Type 'encrypt' or 'decrypt': ")
     string = input("Enter a string: ")
-    key = int(input("Enter a key: "))
+    key = int(input("Enter a key (shift number): "))
     print(cipher(mode, string, key))
     
 if __name__ == "__main__":

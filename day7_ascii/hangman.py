@@ -1,3 +1,7 @@
+"""
+    Hangman! Using the english-words package, randomly select a word from the web2 dictionary, and have the user guess the word.
+"""
+
 import time
 import random
 from english_words import get_english_words_set # https://pypi.org/project/english-words/

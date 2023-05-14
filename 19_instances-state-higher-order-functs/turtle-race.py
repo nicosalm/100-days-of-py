@@ -26,6 +26,15 @@ for i in range(6):
     new_turtle.goto(x=-230, y=y_positions[i])
     turtles.append(new_turtle)
     
+# add power ups that drop from the sky
+power_ups = []
+for i in range(6):
+    new_power_up = Turtle(shape="circle")
+    new_power_up.color(colors[i])
+    new_power_up.penup()
+    new_power_up.goto(x=random.randint(-230, 230), y=random.randint(-230, 230))
+    power_ups.append(new_power_up)
+    
 # game loop
 game_on = True
 while game_on:
@@ -40,5 +49,10 @@ while game_on:
         # move turtle a random distance
         rand_distance = random.randint(0, 10)
         turtle.forward(rand_distance)
+        # if the turtle is on top of a power up, move the turtle 10 spaces forward
+        for power_up in power_ups:
+            if turtle.distance(power_up) < 10:
+                turtle.forward(20)
+                power_up.goto(x=random.randint(-230, 230), y=random.randint(-230, 230))
 
 screen.exitonclick()

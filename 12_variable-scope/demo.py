@@ -11,3 +11,4 @@ x = 5
 f()
 
 # This will throw an error because x is not defined in the scope of the function
+
